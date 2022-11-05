@@ -4,6 +4,6 @@ const todoRouter = require("./todo.router");
 
 const apiRoute = express();
 
-apiRoute.use("/todo", todoRouter.default);
+apiRoute.use("/todo", todoRouter);
 
-export default apiRoute;
+module.exports = apiRoute;

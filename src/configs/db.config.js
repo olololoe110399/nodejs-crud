@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 
 const connectionDatabase = () => {
   //   const mongoDbUrl = `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DB}`;
-  const mongoDbUrl = process.env.URL;
-  console.log(`Connecting to ${mongoDbUrl}`);
+  const mongoDbUrl = process.env.MONGODB_URL;
+  console.log(`Connecting to MongoDB URL`);
 
   mongoose.Promise = global.Promise;
-
   mongoose
     .connect(mongoDbUrl, {
       useNewUrlParser: true,
@@ -21,4 +20,4 @@ const connectionDatabase = () => {
     });
 };
 
-export default connectionDatabase;
+module.exports = connectionDatabase;

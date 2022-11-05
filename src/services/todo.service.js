@@ -2,7 +2,7 @@ const TodoModel = require("../models/todo.model");
 const TodoService = {};
 
 TodoService.getAllTodos = () => {
-  return TodoModel.default.find({});
+  return TodoModel.find({});
 };
 
-export default TodoService;
+module.exports = TodoService;

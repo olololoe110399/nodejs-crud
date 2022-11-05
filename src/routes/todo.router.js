@@ -3,6 +3,6 @@ const TodoController = require("../controllers/todo.controller");
 
 const router = express.Router();
 
-router.get("/", TodoController.default.getAllTodos);
+router.get("/", TodoController.getAllTodos);
 
-export default router;
+module.exports = router;
