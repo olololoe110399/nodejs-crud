@@ -1,0 +1,59 @@
+{
+  "name": "nodejs-crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olololoe110399/nodejs-crud.git"
+  },
+  "author": "Duy Nguyen Ngoc <duynn100198@gmail.com>",
+  "license": "MIT",
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/olololoe110399/nodejs-crud/issues"
+  },
+  "homepage": "https://github.com/olololoe110399/nodejs-crud#readme",
+  "scripts": {
+    "start": "node ./dist/bundle.js",
+    "run:webpack": "webpack --mode development --config webpack.config",
+    "dev": "nodemon index.js",
+    "prepare": "husky install",
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "eslint --ignore-path .gitignore --fix && prettier --write ."
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "yarn lint",
+      "git add --force"
+    ],
+    "*.{md,json}": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "keywords": [],
+  "dependencies": {
+    "-": "^0.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0",
+    "mongoose": "^6.7.1",
+    "morgan": "^1.10.0",
+    "rotating-file-stream": "^3.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "babel-loader": "^9.1.0",
+    "eslint": "^8.26.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
