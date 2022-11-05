@@ -19,15 +19,20 @@
     "dev": "nodemon index.js",
     "prepare": "husky install",
     "lint": "eslint --ignore-path .gitignore .",
-    "format": "eslint --ignore-path .gitignore --fix && prettier --write ."
+    "format": "eslint --ignore-path .gitignore --fix && prettier --write *.{js,json}"
   },
   "lint-staged": {
-    "*.js": [
+    "src/**/*.+(js|json)": [
       "prettier --write",
-      "yarn lint",
+      "eslint --ignore-path .gitignore --fix",
       "git add --force"
     ],
-    "*.{md,json}": [
+    "tests/**/*.+(js|json)": [
+      "prettier --write",
+      "eslint --ignore-path .gitignore --fix",
+      "git add --force"
+    ],
+    "*.{js,jsx,json,css,scss,md}": [
       "prettier --write",
       "git add --force"
     ]
@@ -38,6 +43,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
     "helmet": "^6.0.0",
     "mongoose": "^6.7.1",
     "morgan": "^1.10.0",

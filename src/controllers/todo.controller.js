@@ -4,7 +4,7 @@ const TodoController = {};
 
 TodoController.getAllTodos = async (req, res) => {
   try {
-    const todos = await TodoService.default.getAllTodos();
+    const todos = await TodoService.getAllTodos();
     res.status(200).json({
       todos: todos,
     });
@@ -13,4 +13,4 @@ TodoController.getAllTodos = async (req, res) => {
   }
 };
 
-export default TodoController;
+module.exports = TodoController;
