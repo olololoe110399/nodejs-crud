@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Checking your branch name"
+LC_ALL=C
+
+local_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+vaild_branch_regex="^(feature|bugfix|hotfix)\/.*$"
+
+error_msg="$local_branch is bad branch name. See examle: feature/implement_ui_login"
+
+
+if [[ ! $local_branch =~ $vaild_branch_regex ]]
+then 
+    echo $error_msg
+    exit 1
+else
+    yarn lint-staged -r ../
+fi
+exit 0
